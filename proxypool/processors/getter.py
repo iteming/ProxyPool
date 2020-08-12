@@ -6,12 +6,12 @@ from proxypool.crawlers import __all__ as crawlers_cls
 
 class Getter(object):
     """
-    getter of proxypool
+    获取代理池
     """
     
     def __init__(self):
         """
-        init db and crawlers
+        初始化 db 和 爬虫
         """
         self.redis = RedisClient()
         self.crawlers_cls = crawlers_cls
@@ -19,7 +19,7 @@ class Getter(object):
     
     def is_full(self):
         """
-        if proxypool if full
+        判断代理池是否已经满了
         return: bool
         """
         return self.redis.count() >= PROXY_NUMBER_MAX
@@ -27,13 +27,13 @@ class Getter(object):
     @logger.catch
     def run(self):
         """
-        run crawlers to get proxy
+        运行代理抓取工具
         :return:
         """
         if self.is_full():
             return
         for crawler in self.crawlers:
-            logger.info(f'crawler {crawler} to get proxy')
+            logger.info(f'爬取 {crawler} to get proxy')
             for proxy in crawler.crawl():
                 self.redis.add(proxy)
 
