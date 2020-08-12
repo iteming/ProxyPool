@@ -71,9 +71,9 @@ class Tester(object):
         :return:
         """
         # event loop of aiohttp
-        logger.info('stating tester...')
+        logger.info('开始测试...')
         count = self.redis.count()
-        logger.debug(f'{count} proxies to test')
+        logger.debug(f'共 {count} 个代理等待测试')
         cursor = 0
         while True:
             logger.debug(f'testing proxies use cursor {cursor}, count {TEST_BATCH}')

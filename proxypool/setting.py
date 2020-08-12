@@ -28,7 +28,7 @@ REDIS_HOST = env.str('REDIS_HOST', '127.0.0.1')
 # redis port
 REDIS_PORT = env.int('REDIS_PORT', 6379)
 # redis password, if no password, set it to None
-REDIS_PASSWORD = env.str('REDIS_PASSWORD', None)
+REDIS_PASSWORD = env.str('REDIS_PASSWORD', 'Jiazhiyi263')
 # redis db, if no choice, set it to 0
 REDIS_DB = env.int('REDIS_DB', 0)
 # redis connection string, like redis://[password]@host:port or rediss://[password]@host:port/0
@@ -38,7 +38,7 @@ if REDIS_CONNECTION_STRING:
     REDIS_HOST, REDIS_PORT, REDIS_PASSWORD, REDIS_DB = parse_redis_connection_string(REDIS_CONNECTION_STRING)
 
 # redis hash table key name
-REDIS_KEY = env.str('REDIS_KEY', 'proxies:universal')
+REDIS_KEY = env.str('REDIS_KEY', 'proxies:fundgz_1234567')
 
 # definition of proxy scores
 PROXY_SCORE_MAX = 100
@@ -56,7 +56,7 @@ CYCLE_GETTER = env.int('CYCLE_GETTER', 100)
 GET_TIMEOUT = env.int('GET_TIMEOUT', 10)
 
 # definition of tester
-TEST_URL = env.str('TEST_URL', 'http://www.baidu.com')
+TEST_URL = env.str('TEST_URL', 'http://fundgz.1234567.com.cn')
 TEST_TIMEOUT = env.int('TEST_TIMEOUT', 10)
 TEST_BATCH = env.int('TEST_BATCH', 20)
 # only save anonymous proxy
