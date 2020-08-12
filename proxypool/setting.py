@@ -70,6 +70,7 @@ TEST_BATCH = env.int('TEST_BATCH', 20)
 
 # 是否只保存匿名的代理
 TEST_ANONYMOUS = True
+TEST_ANONYMOUS_MYSELF = False
 # TEST_HEADERS = env.json('TEST_HEADERS', {
 #     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36',
 # })
@@ -81,8 +82,8 @@ API_PORT = env.int('API_PORT', 5555)
 API_THREADED = env.bool('API_THREADED', True)
 
 # flags of enable
-ENABLE_TESTER = env.bool('ENABLE_TESTER', True)
-ENABLE_GETTER = env.bool('ENABLE_GETTER', True)
+ENABLE_TESTER = env.bool('ENABLE_TESTER', False)
+ENABLE_GETTER = env.bool('ENABLE_GETTER', False)
 ENABLE_SERVER = env.bool('ENABLE_SERVER', True)
 
 logger.add(env.str('LOG_RUNTIME_FILE', join(LOG_DIR, 'runtime.log')), level='DEBUG', rotation='1 week', retention='20 days')

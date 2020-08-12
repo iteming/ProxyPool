@@ -3,7 +3,7 @@ import aiohttp
 from loguru import logger
 from proxypool.schemas import Proxy
 from proxypool.storages.redis import RedisClient
-from proxypool.setting import TEST_TIMEOUT, TEST_BATCH, TEST_URL, TEST_VALID_STATUS, TEST_ANONYMOUS
+from proxypool.setting import TEST_TIMEOUT, TEST_BATCH, TEST_URL, TEST_VALID_STATUS, TEST_ANONYMOUS, TEST_ANONYMOUS_MYSELF
 from aiohttp import ClientProxyConnectionError, ServerDisconnectedError, ClientOSError, ClientHttpProxyError
 from asyncio import TimeoutError
 from proxypool.utils.proxy import is_valid_proxy, convert_proxy_or_proxies
@@ -75,6 +75,7 @@ class Tester(object):
                 # TEST_ANONYMOUS 测试匿名
                 if TEST_ANONYMOUS:
                     await self.test_anonymous1(proxy, session)
+                if TEST_ANONYMOUS_MYSELF:
                     await self.test_anonymous2(proxy, session)
 
                 async with session.get(TEST_URL, proxy=f'http://{proxy.string()}', timeout=TEST_TIMEOUT,
