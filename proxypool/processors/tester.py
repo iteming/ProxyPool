@@ -48,7 +48,7 @@ class Tester(object):
 
     # 测试匿名2
     async def test_anonymous2(self, proxy: Proxy, session):
-        url = 'http://ip.ngrok.chik.cn/mockService/ip'
+        url = 'http://km.chik.cn/ip'
         async with session.get(url, timeout=TEST_TIMEOUT) as response:
             resp_json = await response.json()
             origin_ip = resp_json['origin']

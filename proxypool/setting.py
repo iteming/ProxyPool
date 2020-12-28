@@ -51,7 +51,7 @@ PROXY_SCORE_INIT = 20
 PROXY_SCORE_SUB = 10
 
 # 代理池最大最小数量
-PROXY_NUMBER_MAX = 500
+PROXY_NUMBER_MAX = 200
 PROXY_NUMBER_MIN = 0
 
 
@@ -82,8 +82,8 @@ API_PORT = env.int('API_PORT', 5555)
 API_THREADED = env.bool('API_THREADED', True)
 
 # flags of enable
-ENABLE_TESTER = env.bool('ENABLE_TESTER', False)
-ENABLE_GETTER = env.bool('ENABLE_GETTER', False)
+ENABLE_TESTER = env.bool('ENABLE_TESTER', True)
+ENABLE_GETTER = env.bool('ENABLE_GETTER', True)
 ENABLE_SERVER = env.bool('ENABLE_SERVER', True)
 
 logger.add(env.str('LOG_RUNTIME_FILE', join(LOG_DIR, 'runtime.log')), level='DEBUG', rotation='1 week', retention='20 days')

@@ -11,5 +11,5 @@ if __name__ == '__main__':
     if args.processor:
         getattr(Scheduler(), f'run_{args.processor}')()
     else:
-        # Scheduler().run()
-        Scheduler().run_tester()
+        Scheduler().run()
+        # Scheduler().run_tester()
